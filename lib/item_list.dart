@@ -34,12 +34,12 @@ class _ItemState extends State<Item> {
           Row(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(8),
                   bottomLeft: Radius.circular(8),
                 ),
                 child: Image.asset(
-                  '${widget.image}',
+                  widget.image,
                   width: 104,
                   height: 104,
                   fit: BoxFit.fill,
@@ -51,15 +51,15 @@ class _ItemState extends State<Item> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "${widget.itemName}",
-                      style: TextStyle(
+                      widget.itemName,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Color:",
                           style: TextStyle(
                             fontSize: 11,
@@ -67,12 +67,12 @@ class _ItemState extends State<Item> {
                         ),
                         Text(
                           " ${widget.color}",
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Text(
+                        const Text(
                           "   Size:",
                           style: TextStyle(
                             fontSize: 11,
@@ -80,7 +80,7 @@ class _ItemState extends State<Item> {
                         ),
                         Text(
                           " ${widget.size}",
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w500,
                           ),
@@ -116,7 +116,7 @@ class _ItemState extends State<Item> {
                                   }
                                 });
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.remove,
                                 color: Colors.grey,
                                 size: 16,
@@ -127,7 +127,7 @@ class _ItemState extends State<Item> {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               "${widget.quantity}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 14,
                                 color: Colors.black,
                               ),
@@ -160,7 +160,7 @@ class _ItemState extends State<Item> {
                                           context: context,
                                           builder: (context) {
                                             return AlertDialog(
-                                              title: Text(
+                                              title: const Text(
                                                 'Congratulations!',
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
@@ -170,7 +170,7 @@ class _ItemState extends State<Item> {
                                               content: Text(
                                                 "You have added \n 5 \n ${widget.itemName} on your bag!",
                                                 textAlign: TextAlign.center,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 18,
                                                     fontWeight: FontWeight.w400,
                                                     color: Colors.black),
@@ -219,7 +219,7 @@ class _ItemState extends State<Item> {
                                         context: context,
                                         builder: (context) {
                                           return AlertDialog(
-                                            title: Text(
+                                            title: const Text(
                                               'Congratulations!',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
@@ -229,7 +229,7 @@ class _ItemState extends State<Item> {
                                             content: Text(
                                               "You have added \n 5 \n ${widget.itemName} on your bag!",
                                               textAlign: TextAlign.center,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   fontSize: 18,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.black),
@@ -272,7 +272,7 @@ class _ItemState extends State<Item> {
                                   }
                                 });
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.add,
                                 color: Colors.grey,
                                 size: 16,
@@ -299,10 +299,16 @@ class _ItemState extends State<Item> {
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 26,
               ),
-              Text("${widget.price}\$"),
+              Text(
+                "${widget.price}\$",
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.black,
+                ),
+              ),
             ],
           )
         ],
